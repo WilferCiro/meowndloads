@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+import puesmiau_app.window_multi
+
+gui=puesmiau_app.window_multi.start()
