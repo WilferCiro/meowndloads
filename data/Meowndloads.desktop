@@ -2,11 +2,11 @@
 Categories=AudioVideo;
 Comment=Descargar videos desde internet, principalmente youtube
 Encoding=UTF-8
-Exec=puesmiau
+Exec=meowndloads
 GenericName=Pues Miau
 # Translators: This is an icon name, don't translate!
-Icon=puesmiau.png
-Name=PuesMiau
+Icon=meowndloads.png
+Name=Meowndloads
 Terminal=false
 Type=Application
-Name[es_CO]=Pues Miau
+Name[es_CO]=Meowndloads
