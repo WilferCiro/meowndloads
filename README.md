@@ -19,8 +19,10 @@ Ejecución:
 
 ```[bash]
 	$ git clone https://github.com/WilferCiro/puesmiau.git
-	$ cd puesmiau-master
+	$ cd puesmiau
 	$ python3 puesmiau_app/window_multi.py
 ```
+
+![Pantallazo](docs/imagenes/captura2.png "De 150 x 150 píxeles")
 
 Si tienes dudas o sugerencias, por favor visita [Página oficial](https://wilferciro.github.io/puesmiau/index.html "Página oficial")
