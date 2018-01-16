@@ -24,5 +24,6 @@ Ejecución:
 ```
 
 ![Pantallazo](docs/imagenes/captura2.png "De 150 x 150 píxeles")
+![Pantallazo](docs/imagenes/captura3.png "De 150 x 150 píxeles")
 
 Si tienes dudas o sugerencias, por favor visita [Página oficial](https://wilferciro.github.io/puesmiau/index.html "Página oficial")
