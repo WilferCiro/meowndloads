@@ -3,6 +3,8 @@ Pues Miau Beta v0.1
 
 Bienvenido al código fuente de puesmiau, aplicación destinada a la descarga de videos, música y playlists desde youtube (prontamente más servidores), diseñada en python con GTK+ y utilizando la librería youtube_dl.
 
+Esperamos tener lista la aplicación lo más rápido posible, gracias por su ayuda!.
+
 Requisitos
 --------------------
 
