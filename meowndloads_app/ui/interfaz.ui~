@@ -1155,7 +1155,7 @@ En espera de colaboradores</property>
       </packing>
     </child>
   </object>
-  <object class="GtkApplicationWindow" id="puesmiauWindow">
+  <object class="GtkApplicationWindow" id="meowndloadsWindow">
     <property name="can_focus">False</property>
     <property name="icon">meowndloads.png</property>
     <child>
