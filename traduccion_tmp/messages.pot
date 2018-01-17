@@ -1,0 +1,591 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-17 00:00-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../meowndloads_app/window_multi.py:98 ../meowndloads_app/window_multi.py:107
+#: ../meowndloads_app/window_multi.py:114
+#: ../meowndloads_app/window_multi.py:124
+#: ../meowndloads_app/window_multi.py:131
+#: ../meowndloads_app/window_multi.py:138
+#: ../meowndloads_app/window_multi.py:154
+#: ../meowndloads_app/window_multi.py:156
+#: ../meowndloads_app/window_multi.py:162
+#: ../meowndloads_app/window_multi.py:366
+msgid "Descargar "
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:99
+msgid "No hay operaciones..."
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:100
+msgid "Nada a realizar..."
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:106
+#: ../meowndloads_app/window_multi.py:107
+msgid "Obteniendo información del video (puede descargar)..."
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:109
+msgid "URL correcta (Tipo individual)"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:111
+msgid "URL correcta (Tipo playlist)"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:115
+msgid "Detalles obtenidos con éxito, puede verlos en Detalles"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:119
+msgid "Procesando información, sea paciente"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:132
+#: ../meowndloads_app/window_multi.py:626
+msgid "Descargando..."
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:136
+msgid "Archivo"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:139
+msgid "Fin de descarga del archivo "
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:141
+msgid "Descarga Terminada..."
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:144
+msgid "Descarga terminada!"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:145
+msgid "El archivo "
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:145
+msgid ""
+"\n"
+"se ha descargado con éxito"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:154
+msgid " - Error obteniendo Título"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:157
+msgid "Hubo un error en la descarga, compruebe su conexión"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:163
+msgid "Error en la URL"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:164
+msgid "URL incorrecta, compruebe sus datos"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:174
+msgid "Recopilando detalles, "
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:176
+msgid "Recopilando detalles"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:181
+msgid "Obteniendo datos de la descarga..."
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:188
+msgid "Error al obtener los detalles, vuelva a intentarlo"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:223
+#: ../meowndloads_app/window_multi.py:652
+msgid "Nada para hacer..."
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:241
+msgid "Descargado: "
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:254
+msgid "No hay texto a pegar"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:305
+msgid "No hay URL válida"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:339
+msgid "Cargando nueva información, este proceso puede tardar"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:348
+msgid "Autor: "
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:348
+msgid ", Licencia: "
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:353
+msgid "Propiedades Video:"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:364
+msgid " - Error al obtener la imagen"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:372
+#: ../meowndloads_app/ui/interfaz.ui.h:21
+msgid "Cargando, este proceso puede tardar"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:375
+msgid "Propiedades Playlist:"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:381
+#: ../meowndloads_app/ui/interfaz.ui.h:23
+msgid "Duración"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:382
+#: ../meowndloads_app/ui/interfaz.ui.h:22
+msgid "Título"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:383
+msgid "Descripción"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:384
+msgid "Me gusta"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:385
+msgid "No me gusta:"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:386
+msgid "Vistas"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:387
+msgid "Autor, Licencia"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:444
+#: ../meowndloads_app/window_multi.py:468
+#: ../meowndloads_app/window_multi.py:490
+msgid " (Mejor)"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:444
+#: ../meowndloads_app/window_multi.py:468
+#: ../meowndloads_app/window_multi.py:490
+msgid " (Peor)"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:563
+msgid "Procesando"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:578
+msgid "Sobrepasa el límite"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:579
+msgid "No se pueden descargar maś de tres videos al tiempo."
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:709
+msgid "Contraseña (existente)"
+msgstr ""
+
+#: ../meowndloads_app/window_multi.py:711
+msgid "Contraseña (aún no existe)"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:1
+msgid "Historial:"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:2
+msgid "Preferencias"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:3
+msgid "Acerca de..."
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:4
+msgid "Salir"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:5
+msgid "Ruta de Descarga"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:6
+msgid "Seleccionar Carpeta"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:7
+msgid ""
+"Esto permite continúar la descarga cuando sea cancelada, pero a su vez si no "
+"se completa, guarda archivos basura en su directorio"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:8
+msgid "Guardar Caché de descargas"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:9
+msgid "Mostrar Notificación al terminar"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:10
+msgid "Descargas"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:11
+msgid "Usuario(e-mail)"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:12
+msgid "Contraseña"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:13
+msgid ""
+"Iniciar sesión en todas las descargas\n"
+"(Puede generar demoras en la descarga)"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:15
+msgid ""
+"Utilice esta opción sólo cuando el video que desea descargar lo requiera"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:16
+msgid "Usuario youtube"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:17
+msgid "Cancelar"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:18
+msgid "Guardar y cerrar"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:19
+msgid "Sin acciones..."
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:20
+msgid "Cancel"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:24
+msgid "observaciones"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:25
+msgid "autor"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:26
+msgid "Nro de Likes recibidos"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:27
+msgid "likes"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:28
+msgid "Nro de Dislikes recibidos"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:29
+msgid "dislikes"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:30
+msgid "Nro de vistas del video"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:31
+msgid "view count"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:32
+msgid "Controles: "
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:33
+msgid "Pegar"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:34
+msgid "Borrar"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:35
+msgid "ej: https://www.youtube.com/watch?v=V6k1VdgNeKE"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:36
+msgid "Aceptar"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:37
+msgid "Copia y pega la URL y presiona el botón \"Aceptar\""
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:38
+msgid "Preferencia de URL (posee &list=)"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:39
+msgid "Video"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:40
+msgid "Playlist"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:41
+msgid "Opciones..."
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:42
+msgid "URL video/playlist"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:43
+msgid "Click para agregar URL del video"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:44
+msgid "Detalles"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:45
+msgid "Formato"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:46
+msgid "mp3"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:47
+msgid "flac"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:48
+msgid "m4a"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:49
+msgid "opus"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:50
+msgid "vorbis"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:51
+msgid "wav"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:52
+msgid "best"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:53
+msgid "aac"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:54
+msgid "Calidad"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:55
+msgid "1 (Mejor)"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:56
+msgid "2"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:57
+msgid "3"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:58
+msgid "4"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:59
+msgid "5"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:60
+msgid "6"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:61
+msgid "7"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:62
+msgid "8"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:63
+msgid "9 (peor)"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:64
+msgid "Guardar thumbnail"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:65
+msgid "Guardar Subtítulos si existen"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:66
+msgid "Audio"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:67
+msgid "mp4"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:68
+msgid "flv"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:69
+msgid "ogg"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:70
+msgid "webm"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:71
+msgid "mkv"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:72
+msgid "avi"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:73
+msgid "3gp"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:74
+msgid "2160p"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:75
+msgid "1440p"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:76
+msgid "1080p"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:77
+msgid "720p"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:78
+msgid "480p"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:79
+msgid "360p"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:80
+msgid "240p"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:81
+msgid "144p"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:82
+msgid "Calidad (sólo audio)"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:83
+msgid "Orden Descarga"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:84
+msgid "mio"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:85
+msgid "De Adelante Atrás"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:86
+msgid "De Atrás Adelante"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:87
+msgid "Aleatorio"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:88
+msgid "Inicial - Final"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:89
+msgid "PlayList"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:90
+msgid "Descargar Audio"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:91
+msgid "Aquí se mostrará información sobre el proceso actual"
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:92
+msgid "Acciones..."
+msgstr ""
+
+#: ../meowndloads_app/ui/interfaz.ui.h:93
+msgid "URL actual..."
+msgstr ""

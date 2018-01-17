@@ -19,6 +19,16 @@ import math
 from gi.repository import Notify
 import os
 
+
+import gettext, locale
+
+APP="window_multi"
+DIR="po"
+locale.bindtextdomain(APP, DIR)
+gettext.textdomain(APP)
+gettext.bindtextdomain(APP, DIR)
+_ = gettext.gettext
+
 Notify.init("Meowndloads")
 
 error_logger = None
@@ -30,6 +40,10 @@ class Gui():
 	thread = None
 	clipboard=Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 	builder = Gtk.Builder()
+	
+	builder.set_translation_domain(APP)
+	#builder.bindtextdomain(APP, DIR)
+	
 	URL_actual = ''
 	max_descargas = 3 # Oscilar entre 3, 2 y 1
 	ruta_app = os.path.dirname(os.path.abspath(__file__))+'/'
@@ -68,7 +82,6 @@ class Gui():
 	def organizar_estados(self,indice_descarga = 0):
 		global estado_logger
 		estado_logger = self.actual_estado
-		print('Organizar estados')
 		btn_url = self.builder.get_object("AceptarURLBtn")
 		operacion_actual_label = self.builder.get_object("accion_actual")
 		window_descargando = self.builder.get_object("descargando_window")
@@ -82,54 +95,54 @@ class Gui():
 			estado_poner = True
 		if self.actual_estado is self.estados.INICIAL:
 			self._boton_descarga.set_sensitive(estado_poner)
-			self._boton_descarga.set_label('Descargar '+self.actual_tab+'  '+self.actual_titulo_cancion)
-			operacion_actual_label.set_label('No hay operaciones...')
-			propiedades_descarga.set_label('Nada a realizar...')
+			self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+'  '+self.actual_titulo_cancion)
+			operacion_actual_label.set_label(_('No hay operaciones...'))
+			propiedades_descarga.set_label(_('Nada a realizar...'))
 			"""progreso.set_fraction(0)"""
 			btn_url.set_sensitive(True)
 		elif self.actual_estado is self.estados.REC_INFO_IN:
 			self._boton_descarga.set_sensitive(estado_poner)
 			btn_url.set_sensitive(False)
-			operacion_actual_label.set_label('Obteniendo información del video (puede descargar)...')
-			self._boton_descarga.set_label('Descargar '+self.actual_tab+' (Obteniendo info. del video)')
+			operacion_actual_label.set_label(_('Obteniendo información del video (puede descargar)...'))
+			self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+' - '+_('Obteniendo información del video (puede descargar)...'))
 			if self.actual_tipo_url is self.tipo_descarga.INDIVIDUAL:
-				label_url.set_label('URL correcta (Tipo individual)')
+				label_url.set_label(_('URL correcta (Tipo individual)'))
 			else:
-				label_url.set_label('URL correcta (Tipo playlist)')
+				label_url.set_label(_('URL correcta (Tipo playlist)'))
 		elif self.actual_estado is self.estados.REC_INFO_FIN:
 			self._boton_descarga.set_sensitive(estado_poner)
-			self._boton_descarga.set_label('Descargar '+self.actual_tab+' - '+self.actual_titulo_cancion)
-			operacion_actual_label.set_label('Detalles obtenidos con éxito, puede verlos en Detalles')
+			self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+' - '+self.actual_titulo_cancion)
+			operacion_actual_label.set_label(_('Detalles obtenidos con éxito, puede verlos en Detalles'))
 			btn_url.set_sensitive(True)
 		elif self.actual_estado is self.estados.PROC_VIDEO:
 			self._boton_descarga.set_sensitive(False)
-			self._boton_descarga.set_label('Procesando información, sea paciente')
+			self._boton_descarga.set_label(_('Procesando información, sea paciente'))
 			btn_url.set_sensitive(False)
 		elif self.actual_estado is self.estados.INICIA_DESCARGA:
 			self.actual_estado = self.estados.DESCARGANDO
 			self._boton_descarga.set_sensitive(estado_poner)
-			self._boton_descarga.set_label('Descargar '+self.actual_tab+' - '+self.actual_titulo_cancion)
+			self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+' - '+self.actual_titulo_cancion)
 			window_descargando.show()
 			progreso.set_fraction(0)
 			self.organizar_estados(indice_descarga)
 			btn_url.set_sensitive(True)
 		elif self.actual_estado is self.estados.DESCARGANDO:
 			self._boton_descarga.set_sensitive(estado_poner)
-			self._boton_descarga.set_label('Descargar '+self.actual_tab+' - '+self.actual_titulo_cancion)
-			operacion_actual_label.set_label('Descargando...')
+			self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+' - '+self.actual_titulo_cancion)
+			operacion_actual_label.set_label(_('Descargando...'))
 			btn_url.set_sensitive(True)
 		elif self.actual_estado is self.estados.FIN_DESCARGA:
 			if self.video_descargando[indice_descarga] == '':
-				self.video_descargando[indice_descarga] = 'Archivo'
+				self.video_descargando[indice_descarga] = _('Archivo')
 			self._boton_descarga.set_sensitive(False)
-			self._boton_descarga.set_label('Descargar '+self.actual_tab+' - '+self.actual_titulo_cancion)
-			operacion_actual_label.set_label('Fin de descarga del archivo '+self.video_descargando[indice_descarga])
+			self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+' - '+self.actual_titulo_cancion)
+			operacion_actual_label.set_label(_('Fin de descarga del archivo ')+self.video_descargando[indice_descarga])
 			progreso.set_fraction(100)
-			propiedades_descarga.set_label('Descarga Terminada...')
+			propiedades_descarga.set_label(_('Descarga Terminada...'))
 			if self.config.devuelve_muestra_notificacion()==True:
 				Notify.Notification.new(
-					"Descarga terminada!",
-					"El archivo "+self.video_descargando[indice_descarga]+" \nse ha descargado con éxito",
+					_("Descarga terminada!"),
+					_("El archivo ")+self.video_descargando[indice_descarga]+_("\nse ha descargado con éxito"),
 					"dialog-information" # dialog-warn, dialog-error
 				).show()
 			GLib.timeout_add(2000,self.volver_estado_inicial,indice_descarga)
@@ -138,17 +151,17 @@ class Gui():
 		elif self.actual_estado is self.estados.ERROR_DESCARGA:
 			self._boton_descarga.set_sensitive(True)
 			if self.anterior_estado == self.estados.REC_INFO_IN:
-				self._boton_descarga.set_label('Descargar '+self.actual_tab+' - Error obteniendo Título')
+				self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+_(' - Error obteniendo Título'))
 			else:
-				self._boton_descarga.set_label('Descargar '+self.actual_tab+' - '+self.actual_titulo_cancion)
-			operacion_actual_label.set_label('Hubo un error en la descarga, compruebe su conexión')
+				self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+' - '+self.actual_titulo_cancion)
+			operacion_actual_label.set_label(_('Hubo un error en la descarga, compruebe su conexión'))
 			progreso.set_fraction(0)
 			btn_url.set_sensitive(True)
 		elif self.actual_estado is self.estados.ERROR_URL:
 			self._boton_descarga.set_sensitive(False)
-			self._boton_descarga.set_label('Descargar '+self.actual_tab+' - '+self.actual_titulo_cancion)
-			operacion_actual_label.set_label('Error en la URL')
-			label_url.set_label('URL incorrecta, compruebe sus datos')
+			self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+' - '+self.actual_titulo_cancion)
+			operacion_actual_label.set_label(_('Error en la URL'))
+			label_url.set_label(_('URL incorrecta, compruebe sus datos'))
 			btn_url.set_sensitive(True)
 		self.anterior_estado = self.actual_estado
 		
@@ -158,21 +171,21 @@ class Gui():
 		operacion_actual_label = self.builder.get_object("accion_actual")
 		if self.actual_estado is self.estados.REC_INFO_IN:
 			try:
-				operacion_actual_label.set_label('Recopilando detalles, '+texto_thread)
+				operacion_actual_label.set_label(_('Recopilando detalles, ')+texto_thread)
 			except:
-				operacion_actual_label.set_label('Recopilando detalles')
+				operacion_actual_label.set_label(_('Recopilando detalles'))
 		elif self.actual_estado is self.estados.PROC_VIDEO:
 			try:
 				operacion_actual_label.set_label(texto_thread)
 			except Exception as e:
-				operacion_actual_label.set_label('Obteniendo datos de la descarga...')
+				operacion_actual_label.set_label(_('Obteniendo datos de la descarga...'))
 		if error_logger != None and error_logger != '':			
 			if self.actual_estado is self.estados.DESCARGANDO:
 				indice = self.threads_arreglo.index(error_logger)
 				self.termina_descarga_forzada(indice)
 			if self.actual_estado is self.estados.REC_INFO_IN:
 				self.builder.get_object("loading_detalles").stop()
-				self.builder.get_object("LabelPropiedadesCarga").set_label('Error al obtener los detalles, vuelva a intentarlo')
+				self.builder.get_object("LabelPropiedadesCarga").set_label(_('Error al obtener los detalles, vuelva a intentarlo'))
 			self.actual_estado = self.estados.ERROR_DESCARGA
 			self.organizar_estados()
 			error_logger = None
@@ -207,7 +220,7 @@ class Gui():
 		self.builder.get_object("propiedades_descarga{0}".format(str(indice))).set_visible(False)
 		self.threads_arreglo[indice] = ''
 		self.video_descargando[indice] = ''
-		self.propiedades[indice] = 'Nada para hacer...'
+		self.propiedades[indice] = _('Nada para hacer...')
 		self.progresos[indice] = 0
 		self.es_playlist[indice] = False
 		self.cantidad_descargando = self.cantidad_descargando - 1
@@ -225,7 +238,7 @@ class Gui():
 		self.organizar_estados(indice_descarga)
 	
 	def poner_historial(self,cancion):
-		label = Gtk.Label('Descarga: '+str(cancion))
+		label = Gtk.Label(_('Descargado: ')+str(cancion))
 		self.builder.get_object("BoxHistorial").pack_start(label,True,True,0)
 		label.show()
 	
@@ -238,7 +251,7 @@ class Gui():
 		if text != None:
 			editor.set_text(text)
 		else:
-			self.builder.get_object("LabelURLPropiedades").set_label('No hay texto a pegar')		
+			self.builder.get_object("LabelURLPropiedades").set_label(_('No hay texto a pegar'))
 
 	def borrar_texto_btn(self,*args):
 		editor = self.builder.get_object("URL_Principal")
@@ -284,12 +297,12 @@ class Gui():
 				try:
 					self.thread.start()
 				except:
-					print('Error en Thread')
+					print('Meow Error: Error en Thread')
 					self.actual_estado = self.estados.ERROR_DESCARGA
 					self.organizar_estados()
 				self.actual_tipo_url = self.tipo_descarga.INDIVIDUAL
 		else:
-			self.builder.get_object("Url_visualizador").set_label('No hay URL válida')
+			self.builder.get_object("Url_visualizador").set_label(_('No hay URL válida'))
 			self.actual_estado = self.estados.ERROR_URL
 		self.organizar_estados()
 	
@@ -305,7 +318,7 @@ class Gui():
 			if msg.find('error.URLError')!=-1:
 				global error_logger
 				error_logger = threading.current_thread().ident
-			print('Debug: '+msg)
+			print('Meow Debug: '+msg)
 
 		def warning(self, msg):
 			#global logger_mensaje
@@ -315,16 +328,15 @@ class Gui():
 		def error(self, msg):
 			global error_logger
 			error_logger = threading.current_thread().ident
-			print('Error: '+msg)
+			print('Meow Error: '+msg)
 	
 	def carga_propiedades_individual(self):
-		print('Inicia Thread')
 		ydl_opts = {
 			'format': 'bestvideo+bestaudio/best',
 			'logger': self.MyLoggere(),
 		}
 		self.builder.get_object("loading_detalles").start()
-		self.builder.get_object("LabelPropiedadesCarga").set_label('Cargando nueva información, este proceso puede tardar')
+		self.builder.get_object("LabelPropiedadesCarga").set_label(_('Cargando nueva información, este proceso puede tardar'))
 		self.prop_can.extraer_propiedades(self.URL_actual,ydl_opts)
 		duracion=self.prop_can.retorna_duracion()
 		self.builder.get_object("propiedades_duracion").set_label(self.tiempo_formato(duracion))
@@ -333,12 +345,12 @@ class Gui():
 		self.builder.get_object("propiedades_likes").set_label(str(self.prop_can.retorna_likes()))
 		self.builder.get_object("propiedades_dislikes").set_label(str(self.prop_can.retorna_dislikes()))
 		self.builder.get_object("propiedades_view").set_label(str(self.prop_can.retorna_view()))
-		self.builder.get_object("propiedades_autor").set_label('Autor: '+str(self.prop_can.retorna_creador())+', Licencia: '+str(self.prop_can.retorna_licencia()))
+		self.builder.get_object("propiedades_autor").set_label(_('Autor: ')+str(self.prop_can.retorna_creador())+_(', Licencia: ')+str(self.prop_can.retorna_licencia()))
 		self.actual_titulo_cancion = str(self.prop_can.retorna_titulo())
 		#self.organizar_estados()
 		#propiedades_imagen
 		self.builder.get_object("loading_detalles").stop()
-		self.builder.get_object("LabelPropiedadesCarga").set_label('Propiedades Video:')
+		self.builder.get_object("LabelPropiedadesCarga").set_label(_('Propiedades Video:'))
 		#TODO: Agregar excepción cuando se obtiene la imágen desde internet
 		try:
 			response = urlopen(str(self.prop_can.retorna_thumbnail()))
@@ -346,32 +358,33 @@ class Gui():
 			pixbuf = Pixbuf.new_from_stream_at_scale(input_stream, 400, 400, True, None)
 			self.builder.get_object("propiedades_imagen").set_from_pixbuf(pixbuf)
 		except Exception as e:
-			print('Error obteniendo Imágen')
+			print('Meow Error: Error obteniendo Imágen')
 			print(e)
 			label = self.builder.get_object("LabelPropiedadesCarga")
-			label.set_label(label.get_label()+' - Error al obtener la imagen')
-		print('Fin propiedades')
+			label.set_label(label.get_label()+_(' - Error al obtener la imagen'))
+		print('Meow: Fin propiedades')
+		self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+' - '+self.actual_titulo_cancion)
 		
 	
 	def carga_propiedades_playlist(self):
 		global texto_thread
 		self.builder.get_object("loading_detalles").start()
-		self.builder.get_object("LabelPropiedadesCarga").set_label('Cargando, este proceso puede tardar')
+		self.builder.get_object("LabelPropiedadesCarga").set_label(_('Cargando, este proceso puede tardar'))
 		self.propiedades_vacias()
 		self.builder.get_object("loading_detalles").stop()
-		self.builder.get_object("LabelPropiedadesCarga").set_label('Propiedades Playlist:')
+		self.builder.get_object("LabelPropiedadesCarga").set_label(_('Propiedades Playlist:'))
 		self.actual_titulo_cancion = 'Playlist'
 		texto_thread = 'Extracting video information Playlist'
 		
 	
 	def propiedades_vacias(self):
-		self.builder.get_object("propiedades_duracion").set_label('Duración')
-		self.builder.get_object("propiedades_titulo").set_label('Título')
-		self.builder.get_object("propiedades_descripcion").set_label('Descripción')
-		self.builder.get_object("propiedades_likes").set_label('Likes')
-		self.builder.get_object("propiedades_dislikes").set_label('DisLikes')
-		self.builder.get_object("propiedades_view").set_label('Vistas')
-		self.builder.get_object("propiedades_autor").set_label('Autor, Licencia')
+		self.builder.get_object("propiedades_duracion").set_label(_('Duración'))
+		self.builder.get_object("propiedades_titulo").set_label(_('Título'))
+		self.builder.get_object("propiedades_descripcion").set_label(_('Descripción'))
+		self.builder.get_object("propiedades_likes").set_label(_('Me gusta'))
+		self.builder.get_object("propiedades_dislikes").set_label(_('No me gusta:'))
+		self.builder.get_object("propiedades_view").set_label(_('Vistas'))
+		self.builder.get_object("propiedades_autor").set_label(_('Autor, Licencia'))
 		pixbuf = Pixbuf.new_from_file_at_scale (self.ruta_app+'ui/Music-icon.png', 300, 300, True)
 		self.builder.get_object("propiedades_imagen").set_from_pixbuf(pixbuf)
 	
@@ -428,7 +441,7 @@ class Gui():
 
 		if self.actual_tab == 'Audio':
 			descarga_formato = self.builder.get_object("formato_audio").get_active_text()
-			descarga_calidad = self.builder.get_object("calidad_audio").get_active_text().replace(' (Mejor)','').replace(' (Peor)','')
+			descarga_calidad = self.builder.get_object("calidad_audio").get_active_text().replace(_(' (Mejor)'),'').replace(_(' (Peor)'),'')
 			descarga_subtitulos = self.builder.get_object("subtitulos_audio").get_active()
 			descarga_thumbnail = self.builder.get_object("thumbnail_audio").get_active()
 						
@@ -452,7 +465,7 @@ class Gui():
 			
 		if self.actual_tab == 'Video':
 			descarga_formato = self.builder.get_object("formato_video").get_active_text()
-			descarga_calidad = self.builder.get_object("calidad_video").get_active_text().replace(' (Mejor)','').replace(' (Peor)','')
+			descarga_calidad = self.builder.get_object("calidad_video").get_active_text().replace(_(' (Mejor)'),'').replace(_(' (Peor)'),'')
 			descarga_thumbnail = self.builder.get_object("thumbnail_video").get_active()
 			descarga_subtitulos = self.builder.get_object("subtitulos_video").get_active()
 			
@@ -474,7 +487,7 @@ class Gui():
 		
 		if self.actual_tab == 'Playlist':
 			descarga_formato = self.builder.get_object("formato_playlist").get_active_text()
-			descarga_calidad = self.builder.get_object("calidad_playlist").get_active_text().replace(' (Mejor)','').replace(' (Peor)','')
+			descarga_calidad = self.builder.get_object("calidad_playlist").get_active_text().replace(_(' (Mejor)'),'').replace(_(' (Peor)'),'')
 			orden_descarga = int(self.builder.get_object("orden_playlist").get_active_id())
 			desde_playlist = int(self.builder.get_object("desde_playlist").get_value())
 			hasta_playlist = int(self.builder.get_object("hasta_playlist").get_value())
@@ -547,7 +560,7 @@ class Gui():
 					if self.threads_arreglo[x] == '' and indice == None:
 						self.threads_arreglo[x] = self.thread.ident
 						self.video_descargando[x] = self.actual_titulo_cancion
-						self.propiedades[x] = 'Procesando {0}...'.format(self.actual_titulo_cancion)
+						self.propiedades[x] = _('Procesando')+' {0}...'.format(self.actual_titulo_cancion)
 						self.progresos[x] = 0
 						indice = x
 						self.poner_campo_descarga(self.thread.ident,indice)
@@ -562,8 +575,8 @@ class Gui():
 				print('Error al iniciar: '+str(e))
 		else:
 			dialog = Gtk.MessageDialog(self.builder.get_object("meowndloadsWindow"), 0, Gtk.MessageType.INFO,
-			Gtk.ButtonsType.OK, "Sobrepasa el límite")
-			dialog.format_secondary_text("No se pueden descargar maś de tres videos al tiempo.")
+			Gtk.ButtonsType.OK, _("Sobrepasa el límite"))
+			dialog.format_secondary_text(_("No se pueden descargar maś de tres videos al tiempo."))
 			dialog.run()
 			dialog.destroy()
 		
@@ -583,11 +596,11 @@ class Gui():
 		except:
 			indice = 0
 		if d['status'] == 'error':
-			print('Error en: '+str(indice))
+			print('Meow Error: Error en: '+str(indice))
 			return
 		if d['status'] == 'finished':
 			GLib.timeout_add(2000,self.terminar_descarga,indice)
-			print('Terminado')
+			print('Meow: Terminado')
 			return			
 		#_bar = self.builder.get_object("descargando_bar{0}".format(str(indice)))
 		#_propiedades_descarga = self.builder.get_object("propiedades_descarga{0}".format(str(indice)))		
@@ -610,7 +623,7 @@ class Gui():
 					titulo = self.video_descargando[indice]
 				titulo = self.video_descargando[indice]
 			except Exception as e:
-				titulo ='Descargando'
+				titulo =_('Descargando...')
 				print(e)
 			progreso = self.organiza_bytes(int(d['downloaded_bytes']))+' / '+self.organiza_bytes(int(d['total_bytes']))
 			try:
@@ -631,12 +644,12 @@ class Gui():
 		return str(retorna)+' '+arreglo[indice]
 	
 	def terminar_descarga(self,indice):
-		print('Hola Mundo')
+		print('Meow: Descarga terminada')
 		self.actual_estado = self.estados.FIN_DESCARGA
 		self.organizar_estados(indice)
 		if self.es_playlist[indice] == False:
 			self.threads_arreglo[indice] = ''
-			self.propiedades[indice] = 'Nada para hacer...'
+			self.propiedades[indice] = _('Nada para hacer...')
 			self.progresos[indice] = 0
 			self.video_descargando[indice] = ''
 			self.cantidad_descargando = self.cantidad_descargando - 1
@@ -644,7 +657,7 @@ class Gui():
 	
 	def descargando_cancel_accion(self,*args):
 		#TODO: Organizar el stop
-		print('Error, función no añadida aún')
+		print('Meow: Error, función no añadida aún')
 	
 	def __init__(self):
 		#accion_actual
@@ -693,9 +706,9 @@ class Gui():
 		self.builder.get_object("iniciar_sesion_siempre").set_active(self.config.devuelve_inicia_sesion_youtube())
 		self.builder.get_object("Mostrar_Notificacion").set_active(self.config.devuelve_muestra_notificacion())		
 		if self.config.existe_contrasena_youtube():
-			self.builder.get_object("label_contrasena").set_label('Contraseña (existente)')
+			self.builder.get_object("label_contrasena").set_label(_('Contraseña (existente)'))
 		else:
-			self.builder.get_object("label_contrasena").set_label('Contraseña (aún no existe)')
+			self.builder.get_object("label_contrasena").set_label(_('Contraseña (aún no existe)'))
 		
 		#iniciar idle de ejecución de función
 		GLib.timeout_add(1000,self.organiza_estados_idle)
@@ -722,7 +735,7 @@ class Gui():
 		Gtk.main()
 
 def start():
-	print("aplicación Iniciada")
+	print("Meow inicial: aplicación Iniciada")
 	gui = Gui()
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@
     <property name="destroy_with_parent">True</property>
     <property name="type_hint">dialog</property>
     <property name="program_name">Meowndloads 🐩</property>
-    <property name="version">0.1</property>
+    <property name="version">0.1.1</property>
     <property name="website">https://wilferciro.github.io/puesmiau.github.io/</property>
     <property name="authors">Wilfer Daniel Ciro Maya
 En espera de colaboradores</property>
@@ -1440,7 +1440,6 @@ En espera de colaboradores</property>
                           <item translatable="yes">webm</item>
                           <item translatable="yes">mkv</item>
                           <item translatable="yes">avi</item>
-                          <item translatable="yes">3gp</item>
                         </items>
                       </object>
                       <packing>
@@ -1601,7 +1600,6 @@ En espera de colaboradores</property>
                           <item translatable="yes">wav</item>
                           <item translatable="yes">best</item>
                           <item translatable="yes">mp3</item>
-                          <item translatable="yes">3gp</item>
                           <item translatable="yes">mp4</item>
                           <item translatable="yes">flv</item>
                           <item translatable="yes">ogg</item>
