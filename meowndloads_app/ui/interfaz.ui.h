@@ -14,6 +14,8 @@ char *s = N_("Iniciar sesión en todas las descargas\n"
              "(Puede generar demoras en la descarga)");
 char *s = N_("Utilice esta opción sólo cuando el video que desea descargar lo requiera");
 char *s = N_("Usuario youtube");
+char *s = N_("Tema Oscuro Global");
+char *s = N_("Aplicación");
 char *s = N_("Cancelar");
 char *s = N_("Guardar y cerrar");
 char *s = N_("Sin acciones...");
@@ -70,7 +72,6 @@ char *s = N_("ogg");
 char *s = N_("webm");
 char *s = N_("mkv");
 char *s = N_("avi");
-char *s = N_("3gp");
 char *s = N_("2160p");
 char *s = N_("1440p");
 char *s = N_("1080p");

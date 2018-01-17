@@ -1,0 +1,11 @@
+install poedit, open the file lang.po (ex: pt.po for portugues, or fr.po for francês)
+translate de lines
+
+when it is complete execute
+
+msgfmt lang.po -o ../po/lang/LC_MESSAGES/window_multi.mo
+ex: msgfmt pt.po -o ../po/pt/LC_MESSAGES/window_multi.mo 
+	msgfmt fr.po -o ../po/fr/LC_MESSAGES/window_multi.mo
+	
+thanks!
+

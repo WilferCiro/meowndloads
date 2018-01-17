@@ -450,6 +450,69 @@ En espera de colaboradores</property>
             <property name="tab_fill">False</property>
           </packing>
         </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Tema Oscuro Global</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSwitch" id="Tema_Oscuro">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="tooltip_markup" translatable="yes">Utilice esta opción sólo cuando el video que desea descargar lo requiera</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Aplicación</property>
+          </object>
+          <packing>
+            <property name="position">2</property>
+            <property name="tab_fill">False</property>
+          </packing>
+        </child>
       </object>
     </child>
     <child type="titlebar">
@@ -1440,7 +1503,6 @@ En espera de colaboradores</property>
                           <item translatable="yes">webm</item>
                           <item translatable="yes">mkv</item>
                           <item translatable="yes">avi</item>
-                          <item translatable="yes">3gp</item>
                         </items>
                       </object>
                       <packing>
@@ -1601,7 +1663,6 @@ En espera de colaboradores</property>
                           <item translatable="yes">wav</item>
                           <item translatable="yes">best</item>
                           <item translatable="yes">mp3</item>
-                          <item translatable="yes">3gp</item>
                           <item translatable="yes">mp4</item>
                           <item translatable="yes">flv</item>
                           <item translatable="yes">ogg</item>

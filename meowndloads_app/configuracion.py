@@ -32,6 +32,7 @@ class configuracion():
 		d['guarda_cache'] = False
 		d['iniciar_sesion_youtube'] = False
 		d['Mostrar_Notificacion'] = True
+		d['Tema_Oscuro'] = True		
 		d.close()
 	
 	def devuelve_descargas_dir(self):
@@ -112,13 +113,23 @@ class configuracion():
 			self.crear_cache()
 		return self.directorio+"cache/cache.txt"
 	
-	def guarda_configuracion(self,directorio_descarga,usuario_youtube,contrasena_youtube,guarda_cache,iniciar_sesion_youtube,Mostrar_Notificacion):
+	def devuelve_tema_oscuro(self):
+		try:
+			d = self.abrir_archivo_configuracion()
+			Tema_Oscuro = d['Tema_Oscuro']
+			d.close()
+		except:
+			Tema_Oscuro = False
+		return Tema_Oscuro
+	
+	def guarda_configuracion(self,directorio_descarga,usuario_youtube,contrasena_youtube,guarda_cache,iniciar_sesion_youtube,Mostrar_Notificacion,Tema_Oscuro):
 		d = self.abrir_archivo_configuracion()
 		d['descargas_dir'] = directorio_descarga
 		d['usuario_youtube'] = usuario_youtube
 		d['guarda_cache'] = guarda_cache
 		d['iniciar_sesion_youtube'] = iniciar_sesion_youtube
-		d['Mostrar_Notificacion'] = Mostrar_Notificacion		
+		d['Mostrar_Notificacion'] = Mostrar_Notificacion	
+		d['Tema_Oscuro'] = Tema_Oscuro	
 		if contrasena_youtube!='':
 			d['contrasena_youtube'] = contrasena_youtube
 		d.close()

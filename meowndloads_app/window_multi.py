@@ -412,8 +412,14 @@ class Gui():
 		guarda_cache = self.builder.get_object("guarda_cache").get_active()
 		inicia_sesion_youtube = self.builder.get_object("iniciar_sesion_siempre").get_active()
 		Mostrar_Notificacion = self.builder.get_object("Mostrar_Notificacion").get_active()
-		self.config.guarda_configuracion(ruta,usuario_youtube,contrasena_youtube,guarda_cache,inicia_sesion_youtube,Mostrar_Notificacion)
+		Tema_Oscuro = self.builder.get_object("Tema_Oscuro").get_active()
+		self.config.guarda_configuracion(ruta,usuario_youtube,contrasena_youtube,guarda_cache,inicia_sesion_youtube,Mostrar_Notificacion,Tema_Oscuro)		
+		self.poner_tema_oscuro(Tema_Oscuro)	
 		self.cierra_preferencias()
+		
+	def poner_tema_oscuro(self,Tema_Oscuro):
+		settings = Gtk.Settings.get_default()
+		settings.set_property("gtk-application-prefer-dark-theme", Tema_Oscuro)	
 	
 	def VerAcercaDe(self,*args):
 		self.builder.get_object("AcercaDeVentana").run()
@@ -693,6 +699,7 @@ class Gui():
 		#ventana descarga
 		self.builder.get_object("descargando_cancel").connect("clicked", self.descargando_cancel_accion)
 		
+		
 		#Ventana Preferencias:
 		_preferencias = self.builder.get_object("Preferencias_window")
 		_preferencias.connect("delete_event", self.cierra_preferencias)
@@ -709,6 +716,11 @@ class Gui():
 			self.builder.get_object("label_contrasena").set_label(_('Contraseña (existente)'))
 		else:
 			self.builder.get_object("label_contrasena").set_label(_('Contraseña (aún no existe)'))
+
+		#Tema oscuro global
+		Tema_Oscuro = self.config.devuelve_tema_oscuro()
+		self.poner_tema_oscuro(Tema_Oscuro)
+		self.builder.get_object("Tema_Oscuro").set_active(Tema_Oscuro)		
 		
 		#iniciar idle de ejecución de función
 		GLib.timeout_add(1000,self.organiza_estados_idle)
@@ -720,6 +732,7 @@ class Gui():
 			
 		#Vaciar propiedades
 		self.propiedades_vacias()
+	
 		
 		#css
 		style_provider = Gtk.CssProvider()
