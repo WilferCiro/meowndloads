@@ -30,6 +30,6 @@ Ejecución:
 
 Modificaciones:
 --------------------
-Añadida traducción al inglés, y se deja soporte para futuras traducciones a otros lenguajes
+Añadida traducción al inglés y portugués, y se deja soporte para futuras traducciones a otros lenguajes
 
 Si tienes dudas o sugerencias, por favor visita [Página oficial](https://wilferciro.github.io/meowndloads/index.html "Página oficial")
