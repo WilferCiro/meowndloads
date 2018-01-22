@@ -363,7 +363,6 @@ class Gui():
 			label = self.builder.get_object("LabelPropiedadesCarga")
 			label.set_label(label.get_label()+_(' - Error al obtener la imagen'))
 		print('Meow: Fin propiedades')
-		self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+' - '+self.actual_titulo_cancion)
 		
 	
 	def carga_propiedades_playlist(self):
