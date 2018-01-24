@@ -24,12 +24,16 @@ Ejecución:
 	$ cd meowndloads
 	$ python3 meowndloads_app/window_multi.py
 ```
-
 ![Pantallazo](docs/imagenes/captura2.png "De 150 x 150 píxeles")
 ![Pantallazo](docs/imagenes/captura3.png "De 150 x 150 píxeles")
 
 Modificaciones:
 --------------------
 Añadida traducción al inglés y portugués, y se deja soporte para futuras traducciones a otros lenguajes
+
+Actual desarrollo:
+--------------------
+En el momento el desarrollo se encuentra activo, se esta trabajando en la sección de edición de audio, que permitirá modificar componentes del mismo como lo es el formato, la velocidad de bits, las propiedades, etc. A continuación se muestra un primer pantallazo de cómo va el desarrollo de la interfáz.
+![Pantallazo](docs/imagenes/ActualTrabajo1.png "De 150 x 150 píxeles")
 
 Si tienes dudas o sugerencias, por favor visita [Página oficial](https://wilferciro.github.io/meowndloads/index.html "Página oficial")
