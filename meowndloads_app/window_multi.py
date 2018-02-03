@@ -179,6 +179,10 @@ class Gui():
 				operacion_actual_label.set_label(texto_thread)
 			except Exception as e:
 				operacion_actual_label.set_label(_('Obteniendo datos de la descarga...'))
+		
+		if self._boton_descarga.get_label() == _('Descargar ')+self.actual_tab+' - ':
+			self._boton_descarga.set_label(_('Descargar ')+self.actual_tab+' - '+self.actual_titulo_cancion)			
+		
 		if error_logger != None and error_logger != '':			
 			if self.actual_estado is self.estados.DESCARGANDO:
 				indice = self.threads_arreglo.index(error_logger)
