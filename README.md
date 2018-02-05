@@ -1,4 +1,4 @@
-Meowndloads Beta v0.1.1
+Meowndloads Beta v0.1.1 -
 ==========
 
 Bienvenido al código fuente de meowndloads, aplicación destinada a la descarga de videos, música y playlists desde youtube (prontamente más servidores), diseñada en python con GTK+ y utilizando la librería youtube_dl.
